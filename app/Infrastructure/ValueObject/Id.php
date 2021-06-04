@@ -30,7 +30,7 @@ abstract class Id
      * @param int $value
      * @return static
      */
-    public static function of(int $value)
+    public static function of(int $value): static
     {
         return new static($value);
     }

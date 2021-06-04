@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Infrastructure\Eloquents;
 
 use App\Domain\Domainable;

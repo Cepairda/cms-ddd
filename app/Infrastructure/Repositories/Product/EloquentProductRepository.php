@@ -2,10 +2,15 @@
 
 namespace App\Infrastructure\Repositories\Product;
 
+use Illuminate\Support\Collection;
+
 use App\Domain\Product\Entities\Product;
 use App\Domain\Product\Repositories\ProductRepository;
-use App\Infrastructure\Eloquents\EloquentProduct;
 use App\Domain\Domainable;
+use App\Infrastructure\Eloquents\EloquentProduct;
+use App\Infrastructure\ValueObject\Id;
+
+use Exception;
 
 final class EloquentProductRepository implements ProductRepository
 {
@@ -13,7 +18,7 @@ final class EloquentProductRepository implements ProductRepository
     private EloquentProduct $eloquent;
 
     /**
-     * @param EloquentItem $eloquent
+     * @param EloquentProduct $eloquent
      */
     public function __construct(EloquentProduct $eloquent)
     {
@@ -23,7 +28,7 @@ final class EloquentProductRepository implements ProductRepository
     /**
      * @param Id $id
      * @return Product
-     * @throws NotFoundException
+     * @throws Exception
      */
     public function findById(Id $id): Product
     {
@@ -31,7 +36,7 @@ final class EloquentProductRepository implements ProductRepository
 
         $item = $this->eloquent->find($id->value());
         if (empty($item)) {
-            throw new NotFoundException();
+            throw new Exception('Not Found');
         }
 
         return $item->toDomain();
