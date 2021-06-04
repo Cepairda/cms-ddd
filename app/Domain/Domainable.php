@@ -6,5 +6,5 @@ interface Domainable
     /**
      * @return mixed
      */
-    public function toDomain();
+    public function toDomain(): mixed;
 }

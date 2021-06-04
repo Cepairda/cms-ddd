@@ -17,4 +17,9 @@ final class Ref
     {
         return $this->ref;
     }
+
+    public static function of($value): self
+    {
+        return new self($value);
+    }
 }

@@ -8,7 +8,7 @@ use App\Domain\Product\ValueObject\{
     BrandId,
     CategoryId,
     Publish,
-    Money,
+    Price,
 };
 
 final class Product
@@ -20,7 +20,7 @@ final class Product
      * @param BrandId $brandId
      * @param CategoryId $categoryId
      * @param Publish $published
-     * @param Money $price
+     * @param Price $price
      */
     public function __construct(
         private Ref $ref,
@@ -28,6 +28,6 @@ final class Product
         private BrandId $brandId,
         private CategoryId $categoryId,
         private Publish $published,
-        private Money $price
+        private Price $price
     ) {}
 }

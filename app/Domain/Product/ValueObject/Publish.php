@@ -23,4 +23,9 @@ final class Publish
     {
         return $this->publish;
     }
+
+    public static function of($value): self
+    {
+        return new self($value);
+    }
 }

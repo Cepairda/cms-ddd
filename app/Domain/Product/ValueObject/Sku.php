@@ -2,13 +2,15 @@
 
 namespace App\Domain\Product\ValueObject;
 
-final class Sku
+use App\Domain\ValueObjectable;
+
+final class Sku implements ValueObjectable
 {
     /**
      * Ref constructor.
-     * @param string $sku
+     * @param int $sku
      */
-    public function __construct(private string $sku) {}
+    public function __construct(private int $sku) {}
 
     /**
      * @return int
@@ -16,5 +18,10 @@ final class Sku
     public function value(): int
     {
         return $this->sku;
+    }
+
+    public static function of($value): self
+    {
+        return new self($value);
     }
 }

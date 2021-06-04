@@ -2,7 +2,7 @@
 
 namespace App\Domain\Product\ValueObject;
 
-final class Money
+final class Price
 {
     /**
      * Ref constructor.
@@ -16,5 +16,10 @@ final class Money
     public function value(): int|float
     {
         return $this->price;
+    }
+
+    public static function of(int|float $value): self
+    {
+        return new self($value);
     }
 }

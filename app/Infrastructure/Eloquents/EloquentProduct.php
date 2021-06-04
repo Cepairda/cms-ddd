@@ -9,18 +9,21 @@ use App\Domain\Product\ValueObject\{
     BrandId,
     CategoryId,
     Publish,
-    Money,
+    Price,
 };
 
 /**
  * @property int $id
- * @property string $name
- * @property int $price
- * @property int $stock
+ * @property string $ref
+ * @property int $sku
+ * @property int $brand_id
+ * @property int $category_id
+ * @property int $published
+ * @property int|float $price
  */
-class EloquentItem extends AppEloquent implements Domainable
+class EloquentProduct extends AppEloquent implements Domainable
 {
-    protected $table = 'items';
+    protected $table = 'products';
 
     /**
      * @return Product
@@ -29,11 +32,11 @@ class EloquentItem extends AppEloquent implements Domainable
     {
         return new Product(
             Ref::of($this->ref),
-             Sku $sku,
-             BrandId $brandId,
-             CategoryId $categoryId,
-             Publish $published,
-             Money $price
+            Sku::of($this->sku),
+            BrandId::of($this->brand_id),
+            CategoryId::of($this->category_id),
+            Publish::of($this->published),
+            Price::of($this->price)
         );
     }
 }

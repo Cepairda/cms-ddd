@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\ValueObject;
 
 abstract class Id
