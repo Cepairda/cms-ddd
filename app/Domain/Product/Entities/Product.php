@@ -30,4 +30,34 @@ final class Product
         private Publish $published,
         private Price $price
     ) {}
+
+    public function getRef(): Ref
+    {
+        return $this->ref;
+    }
+
+    public function getSku(): Sku
+    {
+        return $this->sku;
+    }
+
+    public function getBrandId(): BrandId
+    {
+        return $this->brandId;
+    }
+
+    public function getCategoryId(): CategoryId
+    {
+        return $this->categoryId;
+    }
+
+    public function getPublished(): Publish
+    {
+        return $this->published;
+    }
+
+    public function getPrice(): Price
+    {
+        return $this->price;
+    }
 }

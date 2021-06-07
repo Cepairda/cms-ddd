@@ -51,4 +51,9 @@ final class EloquentProductRepository implements ProductRepository
             return $eloquent->toDomain();
         });
     }
+
+    public function create(Product $product)
+    {
+        $this->eloquent->toEloquent();
+    }
 }

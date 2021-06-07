@@ -11,9 +11,9 @@ final class Ref
     public function __construct(private string $ref) {}
 
     /**
-     * @return int
+     * @return string
      */
-    public function value(): int
+    public function value(): string
     {
         return $this->ref;
     }

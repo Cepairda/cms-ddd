@@ -1,9 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Eloquents;
-
-use Database\Factories\EloquentProductFactory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+namespace App\Infrastructure\Array;
 
 use App\Domain\Domainable;
 use App\Domain\Product\Entities\Product;
@@ -17,6 +14,7 @@ use App\Domain\Product\ValueObject\{
 };
 
 /**
+ * @property Product $product
  * @property int $id
  * @property string $ref
  * @property int $sku
@@ -25,12 +23,15 @@ use App\Domain\Product\ValueObject\{
  * @property int $published
  * @property int|float $price
  */
-class EloquentProduct extends AppEloquent implements Domainable
+class ArrayProduct implements Domainable
 {
-    use HasFactory;
-
-    public $timestamps = false;
-    protected $table = 'products';
+    /**
+     *
+     */
+    public function __construct(Product $product)
+    {
+        $this->product = $product;
+    }
 
     /**
      * @return Product
@@ -47,8 +48,18 @@ class EloquentProduct extends AppEloquent implements Domainable
         );
     }
 
-    protected static function newFactory(): EloquentProductFactory
+    /**
+     * @return array
+     */
+    public function toArray(): array
     {
-        return EloquentProductFactory::new();
+        return [
+            'ref' => $this->product->getRef()->value(),
+            'sku' => $this->product->getSku()->value(),
+            'brand_id' => $this->product->getBrandId()->value(),
+            'category_id' => $this->product->getCategoryId()->value(),
+            'published' => $this->product->getPublished()->value(),
+            'price' => $this->product->getPrice()->value(),
+        ];
     }
 }
