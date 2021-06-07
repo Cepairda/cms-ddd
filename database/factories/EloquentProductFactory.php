@@ -40,7 +40,6 @@ class EloquentProductFactory extends Factory
             Price::of($this->faker->randomNumber(3))
         );
 
-        $productArray = (new ArrayProduct($product))->toArray();
-        return $productArray;
+        return (new ArrayProduct($product))->toArray();
     }
 }

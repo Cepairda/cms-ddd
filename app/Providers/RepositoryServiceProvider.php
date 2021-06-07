@@ -20,12 +20,15 @@ class RepositoryServiceProvider extends ServiceProvider
     /**
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerProductRepository();
     }
 
-    private function registerProductRepository()
+    /**
+     * @return void
+     */
+    private function registerProductRepository(): void
     {
         $this->app->bind(ProductRepository::class, EloquentProductRepository::class);
     }

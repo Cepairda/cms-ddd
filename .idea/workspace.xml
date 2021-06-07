@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b178346-309b-4817-8854-c7554e173964" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/cms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Domain/Product/Entities/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Domain/Product/Entities/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Domain/Product/ValueObject/Ref.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Domain/Product/ValueObject/Ref.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Domain/Characteristic/Entities/Characteristic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Domain/Characteristic/Entities/Characteristic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Domain/Characteristic/Entities/CharacteristicValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Domain/Characteristic/Entities/CharacteristicValue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Infrastructure/Eloquents/EloquentProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Infrastructure/Eloquents/EloquentProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Infrastructure/Repositories/Product/EloquentProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Infrastructure/Repositories/Product/EloquentProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EloquentProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EloquentProductFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_07_101927_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_07_101927_create_products_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +168,7 @@
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
       <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/astrotomic/laravel-translatable" />
     </include_path>
   </component>
   <component name="ProjectId" id="1tU1kUNqpPK1vpGf9awiG4wzwNd" />
@@ -177,15 +181,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Infrastructure" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/factories" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Infrastructure" />
       <recent name="$PROJECT_DIR$/database/factories" />
+      <recent name="$PROJECT_DIR$/app/Domain/Characteristic/ValueObject" />
+      <recent name="$PROJECT_DIR$/app/Infrastructure/Eloquents" />
+      <recent name="$PROJECT_DIR$/app/Infrastructure" />
     </key>
   </component>
   <component name="RunManager">
@@ -207,7 +213,7 @@
       <workItem from="1622810242067" duration="3161000" />
       <workItem from="1622815663794" duration="2161000" />
       <workItem from="1622817862436" duration="440000" />
-      <workItem from="1623046025672" duration="13878000" />
+      <workItem from="1623046025672" duration="20351000" />
     </task>
     <servers />
   </component>

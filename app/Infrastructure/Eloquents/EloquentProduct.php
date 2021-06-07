@@ -2,8 +2,11 @@
 
 namespace App\Infrastructure\Eloquents;
 
-use Database\Factories\EloquentProductFactory;
+use Database\Factories\EloquentCharacteristicFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
 use App\Domain\Domainable;
 use App\Domain\Product\Entities\Product;
@@ -25,12 +28,13 @@ use App\Domain\Product\ValueObject\{
  * @property int $published
  * @property int|float $price
  */
-class EloquentProduct extends AppEloquent implements Domainable
+class EloquentProduct extends AppEloquent implements Domainable, TranslatableContract
 {
     use HasFactory;
+    use Translatable;
 
-    public $timestamps = false;
     protected $table = 'products';
+    public array $translatedAttributes = ['name', 'meta_title', 'meta_description'];
 
     /**
      * @return Product
@@ -47,8 +51,8 @@ class EloquentProduct extends AppEloquent implements Domainable
         );
     }
 
-    protected static function newFactory(): EloquentProductFactory
+    protected static function newFactory(): EloquentCharacteristicFactory
     {
-        return EloquentProductFactory::new();
+        return EloquentCharacteristicFactory::new();
     }
 }
