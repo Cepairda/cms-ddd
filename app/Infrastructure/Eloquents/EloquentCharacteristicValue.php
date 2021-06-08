@@ -2,11 +2,13 @@
 
 namespace App\Infrastructure\Eloquents;
 
+use Database\Factories\EloquentCharacteristicValueFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
+
 use App\Domain\Characteristic\Entities\CharacteristicValue;
 use App\Domain\Characteristic\ValueObject\Value;
-use Database\Factories\EloquentCharacteristicFactory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 use App\Domain\Domainable;
 
 /**
@@ -18,12 +20,15 @@ use App\Domain\Domainable;
  * @property int $published
  * @property int|float $price
  */
-class EloquentCharacteristicValue extends AppEloquent implements Domainable
+class EloquentCharacteristicValue extends AppEloquent implements Domainable, TranslatableContract
 {
     use HasFactory;
+    use Translatable;
 
     public $timestamps = false;
-    protected $table = 'characteristics_value';
+    protected $table = 'characteristic_values';
+    protected $translationForeignKey = 'characteristic_value_id';
+    public array $translatedAttributes = ['value'];
 
     /**
      * @return CharacteristicValue
@@ -35,8 +40,13 @@ class EloquentCharacteristicValue extends AppEloquent implements Domainable
         );
     }
 
-    protected static function newFactory(): EloquentCharacteristicFactory
+    protected static function newFactory(): EloquentCharacteristicValueFactory
     {
-        return EloquentCharacteristicFactory::new();
+        return EloquentCharacteristicValueFactory::new();
+    }
+
+    public function characteristic()
+    {
+        return $this->belongsTo(EloquentCharacteristic::class);
     }
 }

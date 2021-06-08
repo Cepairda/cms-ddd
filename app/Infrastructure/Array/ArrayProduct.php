@@ -28,10 +28,7 @@ class ArrayProduct implements Domainable
     /**
      *
      */
-    public function __construct(Product $product)
-    {
-        $this->product = $product;
-    }
+    public function __construct(protected Product $product) {}
 
     /**
      * @return Product

@@ -33,7 +33,8 @@ class EloquentCharacteristic extends AppEloquent implements Domainable, Translat
     use Translatable;
 
     public $timestamps = false;
-    protected $table = 'characteristic';
+    protected $table = 'characteristics';
+    protected $translationForeignKey = 'characteristic_id';
     public array $translatedAttributes = ['name'];
 
     /**
@@ -51,6 +52,6 @@ class EloquentCharacteristic extends AppEloquent implements Domainable, Translat
 
     protected static function newFactory(): EloquentCharacteristicFactory
     {
-        return EloquentCharacteristic::new();
+        return EloquentCharacteristicFactory::new();
     }
 }

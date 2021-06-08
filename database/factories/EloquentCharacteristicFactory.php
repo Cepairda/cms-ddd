@@ -29,12 +29,8 @@ class EloquentCharacteristicFactory extends Factory
      */
     public function definition(): array
     {
-        $product = new Characteristic(
-            Name::of('Test'),
-            new CharacteristicValue(Value::of('TestVal')),
-            Publish::of($this->faker->randomElement([0, 1])),
-        );
-
-        return (new ArrayProduct($product))->toArray();
+        return [
+            'published' => $this->faker->randomElement([0, 1])
+        ];
     }
 }

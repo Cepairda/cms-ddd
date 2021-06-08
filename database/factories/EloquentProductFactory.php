@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Domain\Product\Entities\Product;
 use App\Infrastructure\Eloquents\EloquentProduct;
-use App\Infrastructure\Array\ArrayProduct;
+use App\Infrastructure\Array\ArrayCharacteristic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Domain\Product\ValueObject\{
     Ref,
@@ -40,6 +40,6 @@ class EloquentProductFactory extends Factory
             Price::of($this->faker->randomNumber(3))
         );
 
-        return (new ArrayProduct($product))->toArray();
+        return (new ArrayCharacteristic($product))->toArray();
     }
 }
