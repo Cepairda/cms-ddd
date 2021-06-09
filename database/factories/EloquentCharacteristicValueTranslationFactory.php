@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-use App\Infrastructure\Eloquents\EloquentCharacteristicValue;
+use App\Infrastructure\Eloquents\EloquentCharacteristicValueTranslation;
 
 class EloquentCharacteristicValueTranslationFactory extends Factory
 {
@@ -13,7 +13,8 @@ class EloquentCharacteristicValueTranslationFactory extends Factory
      *
      * @var string
      */
-    protected $model = EloquentCharacteristicValue::class;
+    protected $model = EloquentCharacteristicValueTranslation::class;
+
 
     /**
      * Define the model's default state.
@@ -23,7 +24,8 @@ class EloquentCharacteristicValueTranslationFactory extends Factory
     public function definition(): array
     {
         return [
-            'value' => 'TestValue'
+            'value' => 'TestValue',
+            'locale' => 'ru'
         ];
     }
 }

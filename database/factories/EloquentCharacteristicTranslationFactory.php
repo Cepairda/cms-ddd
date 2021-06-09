@@ -14,7 +14,10 @@ class EloquentCharacteristicTranslationFactory extends Factory
      * @var string
      */
     protected $model = EloquentCharacteristicTranslation::class;
-
+    protected array $characteristicsName = [
+        'Color',
+        'Guarantee',
+    ];
     /**
      * Define the model's default state.
      *

@@ -19,6 +19,32 @@ class DatabaseSeeder extends Seeder
     {
         //EloquentProduct::factory(10)->create();
 
+//        EloquentCharacteristicValue::factory()
+//            ->count(3)
+//            ->has(
+//                EloquentCharacteristicValueTranslation::factory(),
+//                'translations'
+//            )
+//            ->for(
+//                EloquentCharacteristic::factory()->has(
+//                    EloquentCharacteristicTranslation::factory(),
+//                    'translations'
+//                ),
+//                'characteristic'
+//            )
+//            ->create();
+
+//        EloquentCharacteristicValue::factory()
+//            ->count(3)
+//            ->for(
+//                EloquentCharacteristic::factory(),
+//                'characteristic'
+//            )
+//            ->create();
+
+//        EloquentCharacteristicValue::factory()
+//            ->count(3)->create();
+
         EloquentCharacteristicValue::factory()
             ->count(3)
             ->has(
@@ -33,16 +59,5 @@ class DatabaseSeeder extends Seeder
                 'characteristic'
             )
             ->create();
-
-//        EloquentCharacteristicValue::factory()
-//            ->count(3)
-//            ->for(
-//                EloquentCharacteristic::factory(),
-//                'characteristic'
-//            )
-//            ->create();
-
-//        EloquentCharacteristicValue::factory()
-//            ->count(3)->create();
     }
 }

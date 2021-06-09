@@ -25,7 +25,6 @@ class EloquentCharacteristicValue extends AppEloquent implements Domainable, Tra
     use HasFactory;
     use Translatable;
 
-    public $timestamps = false;
     protected $table = 'characteristic_values';
     protected $translationForeignKey = 'characteristic_value_id';
     public array $translatedAttributes = ['value'];

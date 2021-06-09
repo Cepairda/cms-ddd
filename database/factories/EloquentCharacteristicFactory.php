@@ -30,6 +30,7 @@ class EloquentCharacteristicFactory extends Factory
     public function definition(): array
     {
         return [
+            'id' => 1,
             'published' => $this->faker->randomElement([0, 1])
         ];
     }

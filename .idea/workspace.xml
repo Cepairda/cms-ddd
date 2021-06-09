@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2b178346-309b-4817-8854-c7554e173964" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Infrastructure/Array/ArrayProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Infrastructure/Array/ArrayProduct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Infrastructure/Eloquents/EloquentCharacteristic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Infrastructure/Eloquents/EloquentCharacteristic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Infrastructure/Eloquents/EloquentCharacteristicValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Infrastructure/Eloquents/EloquentCharacteristicValue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/EloquentCharacteristicFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EloquentCharacteristicFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EloquentProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EloquentProductFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_07_135013_create_products_translations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_07_135013_create_products_translations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EloquentCharacteristicTranslationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EloquentCharacteristicTranslationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EloquentCharacteristicValueTranslationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EloquentCharacteristicValueTranslationFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpDebugGeneral" xdebug_debug_port="9004" listening_started="true">
+  <component name="PhpDebugGeneral" xdebug_debug_port="9004">
     <xdebug_debug_ports port="9004" />
   </component>
   <component name="PhpServers">
@@ -178,18 +177,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Infrastructure/Eloquents" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeders" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/seeders" />
       <recent name="$PROJECT_DIR$/app/Infrastructure/Eloquents" />
       <recent name="$PROJECT_DIR$/database/factories" />
       <recent name="$PROJECT_DIR$/app/Infrastructure/Array" />
       <recent name="$PROJECT_DIR$/app/Domain/Characteristic/ValueObject" />
-      <recent name="$PROJECT_DIR$/app/Infrastructure" />
     </key>
   </component>
   <component name="RunManager">
@@ -214,11 +213,29 @@
       <workItem from="1623046025672" duration="20564000" />
       <workItem from="1623132398891" duration="4710000" />
       <workItem from="1623139628137" duration="8644000" />
-      <workItem from="1623153029176" duration="8669000" />
+      <workItem from="1623153029176" duration="9116000" />
+      <workItem from="1623218912597" duration="9374000" />
+      <workItem from="1623246116730" duration="3668000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database/factories/EloquentCharacteristicValueFactory.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database/factories/EloquentCharacteristicFactory.php</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
