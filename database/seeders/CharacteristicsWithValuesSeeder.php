@@ -48,17 +48,15 @@ class CharacteristicsWithValuesSeeder extends Seeder
     public function run()
     {
         foreach ($this->characteristicsWithValue as $characteristicName => $characteristicValues) {
-            $characteristic = new EloquentCharacteristic();
-            $characteristic->save();
+            $characteristic = EloquentCharacteristic::create();
             $characteristicTranslation = new EloquentCharacteristicTranslation(['locale' => 'ru', 'name' => $characteristicName]);
             $characteristic->translation()->save($characteristicTranslation);
 
             foreach ($characteristicValues as $characteristicValue) {
-                $characteristicValue = new EloquentCharacteristicValue();
-                $characteristicValue->characteristic()->associate($characteristic);
-                $characteristicValue->save();
+                $value = new EloquentCharacteristicValue();
+                $value->characteristic()->associate($characteristic)->save();
                 $characteristicValueTranslation = new EloquentCharacteristicValueTranslation(['locale' => 'ru', 'value' => $characteristicValue]);
-                $characteristicValue->translation()->save($characteristicValueTranslation);
+                $value->translation()->save($characteristicValueTranslation);
             }
         }
     }

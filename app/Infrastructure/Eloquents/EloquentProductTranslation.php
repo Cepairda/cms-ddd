@@ -2,8 +2,9 @@
 
 namespace App\Infrastructure\Eloquents;
 
-use Database\Factories\EloquentCharacteristicFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Database\Factories\EloquentProductTranslationFactory;
 
 /**
  * @property int $id
@@ -19,9 +20,10 @@ class EloquentProductTranslation extends AppEloquent
     use HasFactory;
 
     protected $table = 'products_translations';
+    public $timestamps = false;
 
-    protected static function newFactory(): EloquentCharacteristicFactory
+    protected static function newFactory(): EloquentProductTranslationFactory
     {
-        return EloquentCharacteristicFactory::new();
+        return EloquentProductTranslationFactory::new();
     }
 }

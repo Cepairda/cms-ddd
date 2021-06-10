@@ -2,8 +2,9 @@
 
 namespace App\Infrastructure\Eloquents;
 
-use Database\Factories\EloquentCharacteristicFactory;
+use Database\Factories\EloquentProductFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
@@ -34,6 +35,7 @@ class EloquentProduct extends AppEloquent implements Domainable, TranslatableCon
     use Translatable;
 
     protected $table = 'products';
+    protected $translationForeignKey = 'product_id';
     public array $translatedAttributes = ['name', 'meta_title', 'meta_description'];
 
     /**
@@ -51,8 +53,18 @@ class EloquentProduct extends AppEloquent implements Domainable, TranslatableCon
         );
     }
 
-    protected static function newFactory(): EloquentCharacteristicFactory
+    protected static function newFactory(): EloquentProductFactory
     {
-        return EloquentCharacteristicFactory::new();
+        return EloquentProductFactory::new();
+    }
+
+    public function characteristics(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            EloquentCharacteristicValue::class,
+            'product_characteristic_value',
+            'product_id',
+            'characteristic_value_id',
+        );
     }
 }

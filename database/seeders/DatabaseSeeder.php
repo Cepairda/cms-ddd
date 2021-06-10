@@ -2,11 +2,16 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
+
 use App\Infrastructure\Eloquents\EloquentCharacteristic;
 use App\Infrastructure\Eloquents\EloquentCharacteristicTranslation;
+use App\Infrastructure\Eloquents\EloquentProduct;
+use App\Infrastructure\Eloquents\EloquentProductCharacteristicValue;
+use App\Infrastructure\Eloquents\EloquentProductTranslation;
 use App\Infrastructure\Eloquents\EloquentCharacteristicValue;
 use App\Infrastructure\Eloquents\EloquentCharacteristicValueTranslation;
-use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,47 +22,37 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //EloquentProduct::factory(10)->create();
+        /**
+         * Clear Tables
+         */
+       /* Schema::disableForeignKeyConstraints();
 
-//        EloquentCharacteristicValue::factory()
-//            ->count(3)
-//            ->has(
-//                EloquentCharacteristicValueTranslation::factory(),
-//                'translations'
-//            )
-//            ->for(
-//                EloquentCharacteristic::factory()->has(
-//                    EloquentCharacteristicTranslation::factory(),
-//                    'translations'
-//                ),
-//                'characteristic'
-//            )
-//            ->create();
+        EloquentProduct::truncate();
+        EloquentProductTranslation::truncate();
+        EloquentCharacteristic::truncate();
+        EloquentCharacteristicTranslation::truncate();
+        EloquentCharacteristicValue::truncate();
+        EloquentCharacteristicValueTranslation::truncate();
+        EloquentProductCharacteristicValue::truncate();
 
-//        EloquentCharacteristicValue::factory()
-//            ->count(3)
-//            ->for(
-//                EloquentCharacteristic::factory(),
-//                'characteristic'
-//            )
-//            ->create();
+        Schema::enableForeignKeyConstraints();*/
 
-//        EloquentCharacteristicValue::factory()
-//            ->count(3)->create();
-
-        EloquentCharacteristicValue::factory()
-            ->count(3)
+        /**
+         * Generate Products
+         */
+ /*       EloquentProduct::factory(50)
             ->has(
-                EloquentCharacteristicValueTranslation::factory(),
+                EloquentProductTranslation::factory(),
                 'translations'
             )
-            ->for(
-                EloquentCharacteristic::factory()->has(
-                    EloquentCharacteristicTranslation::factory(),
-                    'translations'
-                ),
-                'characteristic'
-            )
-            ->create();
+            ->create();*/
+
+        /**
+         * Generate Characteristics with Value,
+         */
+        $this->call([
+            //CharacteristicsWithValuesSeeder::class,
+            ProductWithCharacteristicsValueSeeder::class,
+        ]);
     }
 }

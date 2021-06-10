@@ -7,20 +7,20 @@ use Illuminate\Support\Collection;
 use App\Domain\Product\Entities\Product;
 use App\Domain\Product\Repositories\ProductRepository;
 use App\Domain\Domainable;
-use App\Infrastructure\Eloquents\EloquentProduct;
+use App\Infrastructure\Eloquents\EloquentProductCharacteristicValue;
 use App\Infrastructure\ValueObject\Id;
 
 use Exception;
 
 final class EloquentProductRepository implements ProductRepository
 {
-    /** @var  EloquentProduct */
-    private EloquentProduct $eloquent;
+    /** @var  EloquentProductCharacteristicValue */
+    private EloquentProductCharacteristicValue $eloquent;
 
     /**
-     * @param EloquentProduct $eloquent
+     * @param EloquentProductCharacteristicValue $eloquent
      */
-    public function __construct(EloquentProduct $eloquent)
+    public function __construct(EloquentProductCharacteristicValue $eloquent)
     {
         $this->eloquent = $eloquent;
     }
